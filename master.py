@@ -1,15 +1,19 @@
-from flask import Flask
+from flask import Flask, render_template
 
 app = Flask(__name__)
 
-@app.route('/index')
+menu = ['Setting up', 'The first app', 'Feedback']
+
+
 @app.route('/')
 def index():
-    return 'index'
+    return render_template('index.html', title='About Flask', menu=menu)
+
 
 @app.route('/about')
 def about():
-    return "<h1>About the site</h1>"
+    return render_template('about.html', title='About the site')
+
 
 if __name__ == '__main__':
     app.run(debug=True)
