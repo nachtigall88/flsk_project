@@ -2,7 +2,11 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>{{ title }}</title>
+{% if title %}
+    <title>About Flask - {{title}}</title>
+{% else %}
+    <title>About FLask</title>
+{% endif %}
 </head>
 <body>
 <u1>
@@ -11,6 +15,10 @@
 {% endfor %}
 </u1>
 
+{% if title -%}
 <h1>{{ title }}</h1>
+{% else -%}
+<h1>About Flask</h1>
+{% endif %}
 </body>
 </html>

@@ -7,12 +7,12 @@ menu = ['Setting up', 'The first app', 'Feedback']
 
 @app.route('/')
 def index():
-    return render_template('index.html', title='About Flask', menu=menu)
+    return render_template('index.html', menu=menu)
 
 
 @app.route('/about')
 def about():
-    return render_template('about.html', title='About the site')
+    return render_template('about.html', title='About the site', menu=menu)
 
 
 if __name__ == '__main__':
