@@ -1,19 +1,22 @@
-from flask import Flask, render_template
+class ChessBoard:
+    nums = [1, 2, 3, 4, 5, 6, 7, 8]
+    letter = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h']
 
-app = Flask(__name__)
-
-menu = ['Setting up', 'The first app', 'Feedback']
-
-
-@app.route('/')
-def index():
-    return render_template('index.html', menu=menu)
+    def __init__(self):
+        pass
 
 
-@app.route('/about')
-def about():
-    return render_template('about.html', title='About the site', menu=menu)
+class ChessSquare:
+    def __init__(self, letter, number, color, left, right, top, bottom, is_vacant):
+        self.letter = letter
+        self.number = number
+        self.color = color
+        self.left = left
+        self.right = right
+        self.top = top
+        self.botton = bottom
+        self.is_vacant = is_vacant
 
 
-if __name__ == '__main__':
-    app.run(debug=True)
+class ChessFigure:
+    pass
